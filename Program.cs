@@ -10,12 +10,13 @@ namespace WeaponAmmoSystem
     {
         static int[] Ammo;
         static int weapon;
+        static string[] WeaponName;
 
         static void Main(string[] args)
         {
             Console.WriteLine("=== Weapon Ammo System ===");
 
-            weapon = 0;
+            weapon = 3;
 
             Ammo = new int[5];
             Ammo[0] = 14;
@@ -24,18 +25,39 @@ namespace WeaponAmmoSystem
             Ammo[3] = 35;
             Ammo[4] = 5;
 
+
+            WeaponName = new string[5];
+            WeaponName[0] = "P2020 Pistol";
+            WeaponName[1] = "Alternator SMG";
+            WeaponName[2] = "R301 Assault Rifle";
+            WeaponName[3] = "Spitfire LMG";
+            WeaponName[4] = "PeaceKeeper Shotgun";
+
             weaponAmmoCheck();
 
-
             Console.ReadKey();
+
+
+
+            Fire(20);
+
+            weaponAmmoCheck();
+
+            Console.ReadKey(true);
+            
         }
 
+
+        static void Fire(int bulletValue)
+        {
+            Ammo[weapon] = Ammo[weapon] - bulletValue;
+        }
 
 
         static void weaponAmmoCheck()
         {
 
-            Console.WriteLine("Ammo: " + Ammo[0]);
+            Console.WriteLine("Weapon: " + WeaponName[weapon] + "          Ammo: " + Ammo[weapon]);
                 
         }
     }
