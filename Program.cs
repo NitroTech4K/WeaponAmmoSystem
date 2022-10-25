@@ -47,6 +47,12 @@ namespace WeaponAmmoSystem
             
         }
 
+        static void weaponAmmoCheck()
+        {
+
+            Console.WriteLine("Weapon: " + WeaponName[weapon] + "          Ammo: " + Ammo[weapon]);
+                
+        }
 
         static void Fire(int bulletsShot)
         {
@@ -57,12 +63,12 @@ namespace WeaponAmmoSystem
             Console.WriteLine("The player just shot their " + WeaponName[weapon] + " " +bulletsShot + " Times!");
         }
 
-
-        static void weaponAmmoCheck()
+        static void Reload()
         {
-
-            Console.WriteLine("Weapon: " + WeaponName[weapon] + "          Ammo: " + Ammo[weapon]);
-                
+            if 
         }
+
+
+
     }
 }
