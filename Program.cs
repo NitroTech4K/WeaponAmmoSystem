@@ -50,6 +50,8 @@ namespace WeaponAmmoSystem
 
         static void Fire(int bulletsShot)
         {
+            Console.WriteLine("The player's about to use a " + WeaponName[weapon] + ", and fire" + bulletsShot + " Shots");
+            
             Ammo[weapon] = Ammo[weapon] - bulletsShot;
 
             Console.WriteLine("The player just shot their " + WeaponName[weapon] + " " +bulletsShot + " Times!");
