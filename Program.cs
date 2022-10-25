@@ -8,6 +8,7 @@ namespace WeaponAmmoSystem
 {
     internal class Program
     {
+        static int[] MaxAmmo;
         static int[] Ammo;
         static int weapon;
         static string[] WeaponName;
@@ -24,6 +25,13 @@ namespace WeaponAmmoSystem
             Ammo[2] = 18;
             Ammo[3] = 35;
             Ammo[4] = 5;
+
+            MaxAmmo = new int[5];
+            MaxAmmo[0] = 14;
+            MaxAmmo[1] = 19;
+            MaxAmmo[2] = 18;
+            MaxAmmo[3] = 35;
+            MaxAmmo[4] = 5;
 
 
             WeaponName = new string[5];
@@ -43,8 +51,17 @@ namespace WeaponAmmoSystem
 
             weaponAmmoCheck();
 
+
             Console.ReadKey(true);
             
+
+            Reload();
+
+            weaponAmmoCheck();
+
+            Console.ReadKey(true);
+
+
         }
 
         static void weaponAmmoCheck()
@@ -63,9 +80,24 @@ namespace WeaponAmmoSystem
             Console.WriteLine("The player just shot their " + WeaponName[weapon] + " " +bulletsShot + " Times!");
         }
 
+        static void AmmoCheck()
+        {
+            if (Ammo[weapon] == 0)
+            {
+                Console.WriteLine("== Your mag for your " + WeaponName + " is empty!    Ammo: " + (Ammo[weapon] = 0));
+            }
+        }
+
         static void Reload()
         {
-            if 
+            Ammo[weapon] = Ammo[weapon] + MaxAmmo[weapon];
+
+
+            if (Ammo[weapon] > MaxAmmo[weapon])
+            {
+                Ammo[weapon] = MaxAmmo[weapon];
+                Console.WriteLine("Already at max Ammo for your " + WeaponName[weapon] + ".       Ammo: " + Ammo[weapon]);
+            }
         }
 
 
